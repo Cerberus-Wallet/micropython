@@ -34,7 +34,7 @@
 
 #if MICROPY_ENABLE_GC
 
-#if MICROPY_TREZOR_MEMPERF
+#if MICROPY_CERBERUS_MEMPERF
 size_t alloc_count = 0;
 #endif
 
@@ -571,7 +571,7 @@ found:
     gc_dump_alloc_table();
     #endif
 
-    #if MICROPY_TREZOR_MEMPERF
+    #if MICROPY_CERBERUS_MEMPERF
     ++alloc_count;
     #endif
 
