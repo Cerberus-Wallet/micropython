@@ -448,8 +448,8 @@
 #endif
 
 // Whether to count GC allocations
-#ifndef MICROPY_CERBERUS_MEMPERF
-#define MICROPY_CERBERUS_MEMPERF (0)
+#ifndef MICROPY_TREZOR_MEMPERF
+#define MICROPY_TREZOR_MEMPERF (0)
 #endif
 
 // The mp_print_t printer used for debugging output

@@ -76,7 +76,7 @@ STATIC void code_print(const mp_print_t *print, mp_obj_t o_in, mp_print_kind_t k
         );
 }
 
-#if MICROPY_CERBERUS_MEMPERF
+#if MICROPY_TREZOR_MEMPERF
 
 #include <stdlib.h>
 
@@ -258,7 +258,7 @@ mp_obj_t mp_obj_new_code(const mp_raw_code_t *rc) {
     return MP_OBJ_FROM_PTR(o);
 }
 
-#endif /* MICROPY_CERBERUS_MEMPERF */
+#endif /* MICROPY_TREZOR_MEMPERF */
 
 /******************************************************************************/
 // frame object
@@ -316,7 +316,7 @@ const mp_obj_type_t mp_type_frame = {
     .attr = frame_attr,
 };
 
-#if MICROPY_CERBERUS_MEMPERF
+#if MICROPY_TREZOR_MEMPERF
 
 mp_obj_t mp_obj_malloc_frame(const mp_code_state_t *code_state) {
     mp_obj_frame_t *o = (mp_obj_frame_t*)malloc(sizeof(mp_obj_frame_t));
@@ -374,7 +374,7 @@ mp_obj_t mp_obj_new_frame(const mp_code_state_t *code_state) {
     return MP_OBJ_FROM_PTR(o);
 }
 
-#endif /* MICROPY_CERBERUS_MEMPERF */
+#endif /* MICROPY_TREZOR_MEMPERF */
 
 
 /******************************************************************************/
@@ -411,7 +411,7 @@ mp_obj_t mp_prof_settrace(mp_obj_t callback) {
     return mp_const_none;
 }
 
-#if MICROPY_CERBERUS_MEMPERF
+#if MICROPY_TREZOR_MEMPERF
 
 mp_obj_t mp_prof_frame_enter(mp_code_state_t *code_state) {
     assert(!mp_prof_is_executing);
@@ -499,7 +499,7 @@ mp_obj_t mp_prof_frame_enter(mp_code_state_t *code_state) {
     return top;
 }
 
-#endif /* MICROPY_CERBERUS_MEMPERF */
+#endif /* MICROPY_TREZOR_MEMPERF */
 
 mp_obj_t mp_prof_frame_update(const mp_code_state_t *code_state) {
     mp_obj_frame_t *frame = code_state->frame;
